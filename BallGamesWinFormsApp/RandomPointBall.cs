@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace BallGamesWinFormsApp
 {
-    public interface IBallComponent
+    public class RandomPointBall : Ball
     {
-        public void Update(Ball ball, Form form);
+       
+        public RandomPointBall(Form form) : base(form)
+        {
+            
+        }
     }
 }

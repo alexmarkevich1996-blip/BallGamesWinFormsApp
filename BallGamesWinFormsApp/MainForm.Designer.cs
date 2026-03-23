@@ -29,42 +29,50 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            timerForBall = new System.Windows.Forms.Timer(components);
-            createBallsButton = new Button();
-            stopBallsButton = new Button();
+            createRandomBallButton = new Button();
+            timer = new System.Windows.Forms.Timer(components);
+            stopAllBallsButton = new Button();
+            clearButton = new Button();
             SuspendLayout();
             // 
-            // timerForBall
+            // createRandomBallButton
             // 
-            timerForBall.Tick += timerForBall_Tick;
+            createRandomBallButton.Location = new Point(994, 107);
+            createRandomBallButton.Name = "createRandomBallButton";
+            createRandomBallButton.Size = new Size(120, 38);
+            createRandomBallButton.TabIndex = 1;
+            createRandomBallButton.Text = "Create Random Balls";
+            createRandomBallButton.UseVisualStyleBackColor = true;
+            createRandomBallButton.Click += DrawRandomBallButton_Click;
             // 
-            // createBallsButton
+            // stopAllBallsButton
             // 
-            createBallsButton.Location = new Point(952, 40);
-            createBallsButton.Name = "createBallsButton";
-            createBallsButton.Size = new Size(168, 50);
-            createBallsButton.TabIndex = 0;
-            createBallsButton.Text = "Create Balls";
-            createBallsButton.UseVisualStyleBackColor = true;
-            createBallsButton.Click += CreateBallsButton_Click;
+            stopAllBallsButton.Location = new Point(994, 151);
+            stopAllBallsButton.Name = "stopAllBallsButton";
+            stopAllBallsButton.Size = new Size(120, 36);
+            stopAllBallsButton.TabIndex = 2;
+            stopAllBallsButton.Text = "Stop All Balls";
+            stopAllBallsButton.UseVisualStyleBackColor = true;
+            stopAllBallsButton.Click += StopAllBallsButton_Click;
             // 
-            // stopBallsButton
+            // clearButton
             // 
-            stopBallsButton.Location = new Point(952, 114);
-            stopBallsButton.Name = "stopBallsButton";
-            stopBallsButton.Size = new Size(168, 50);
-            stopBallsButton.TabIndex = 1;
-            stopBallsButton.Text = "Stop Balls";
-            stopBallsButton.UseVisualStyleBackColor = true;
-            stopBallsButton.Click += stopBallsButton_Click;
+            clearButton.Location = new Point(994, 203);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(120, 31);
+            clearButton.TabIndex = 3;
+            clearButton.Text = "Clear";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += CleanButton_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1213, 746);
-            Controls.Add(stopBallsButton);
-            Controls.Add(createBallsButton);
+            Controls.Add(clearButton);
+            Controls.Add(stopAllBallsButton);
+            Controls.Add(createRandomBallButton);
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load;
@@ -73,8 +81,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer timerForBall;
-        private Button createBallsButton;
-        private Button stopBallsButton;
+        private Button createRandomBallButton;
+        private System.Windows.Forms.Timer timer;
+        private Button stopAllBallsButton;
+        private Button clearButton;
     }
 }

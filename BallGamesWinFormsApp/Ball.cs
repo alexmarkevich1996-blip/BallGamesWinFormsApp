@@ -9,41 +9,48 @@ namespace BallGamesWinFormsApp
     public class Ball
     {
         protected Form Form { get; set; }
-        protected Graphics Graphics { get; set; }
-        internal int X { get; set; }
-        internal int Y { get; set; }
-        internal int Size { get; set; }
-
-        private List<IBallComponent> components { get; set; }
-
+        private Graphics Graphics { get; set; }
+        protected int X { get; set; }
+        protected int Y { get; set; }
+        protected int Vx { get; set; }
+        protected int Vy { get; set; }
+        protected int Size { get; set; }
+        protected static Random Random = new Random();
         public Ball(Form form)
         {
-            components = new List<IBallComponent>();
             Form = form;
             Graphics = form.CreateGraphics();
-            X = Form.ClientSize.Width / 2;
-            Y = Form.ClientSize.Height / 2;
+            X = 150;
+            Y = 150;
+            Vx = 5;
+            Vy = -5;
             Size = 60;
         }
-
-        public void Update()
+        public void Move()
         {
-            foreach (var component in components)
-            {
-                component.Update(this, Form);
-            }
+            Clear();
+            Go();
+            Show();
         }
 
-        public void AddComponent(IBallComponent component)
+        public void Show()
         {
-            components.Add(component);
-        }
-
-        public void Draw()
-        {
+            var rectangle = new Rectangle(X - Size / 2, Y - Size / 2, Size, Size);
             var brush = Brushes.Aqua;
-            var rectangle = new Rectangle(X - Size/2, Y - Size/2, Size, Size);
             Graphics.FillEllipse(brush, rectangle);
+        }
+
+        public void Clear()
+        {
+            var rectangle = new Rectangle(X - Size / 2, Y - Size / 2, Size, Size);
+            var brush = new SolidBrush(Form.BackColor);
+            Graphics.FillEllipse(brush, rectangle);
+        }
+
+        private void Go()
+        {
+            X += Vx;
+            Y += Vy;
         }
     }
 }
