@@ -1,4 +1,4 @@
-﻿namespace BallGames_WinFormsApp
+﻿namespace BilliardBalls_WinFormsApp
 {
     partial class MainForm
     {
@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            button1 = new Button();
             SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Location = new Point(423, 47);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Name = "MainForm";
-            Text = "MainForm";
+            Text = "Form1";
+            Load += MainForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
+        private Button button1;
     }
 }

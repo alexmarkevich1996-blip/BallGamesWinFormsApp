@@ -1,3 +1,5 @@
+using Ball.Common;
+
 namespace BallGamesWinFormsApp
 {
     public partial class MainForm : Form
@@ -17,7 +19,7 @@ namespace BallGamesWinFormsApp
             createRandomBallButton.Enabled = false;
 
             randomBalls = new List<RandomMoveBall>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var randomBall = new RandomMoveBall(this);
                 randomBalls.Add(randomBall);
@@ -58,5 +60,7 @@ namespace BallGamesWinFormsApp
             createRandomBallButton.Enabled = true;
             clearButton.Enabled = false;
         }
+
+        
     }
 }

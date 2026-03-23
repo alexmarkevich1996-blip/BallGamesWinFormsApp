@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="Ball.Common/Ball.Common.csproj" Id="2d973830-3fdd-4f2f-bca8-a67fdaaf17a1" />
   <Project Path="BallGamesWinFormsApp/BallGamesWinFormsApp.csproj" />
+  <Project Path="BilliardBalls_WinFormsApp/BilliardBalls_WinFormsApp.csproj" Id="9fe4b658-2914-4f4d-af55-3045470c99fc" />
+  <Project Path="CatchMe2_WinFormsApp/CatchMe2_WinFormsApp.csproj" Id="0300619d-676b-459a-a9ea-873401a1420b" />
 </Solution>

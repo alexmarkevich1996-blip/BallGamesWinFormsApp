@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BallGamesWinFormsApp
+namespace Ball.Common
 {
     public class Ball
     {
@@ -24,7 +24,7 @@ namespace BallGamesWinFormsApp
             Y = 150;
             Vx = 5;
             Vy = -5;
-            Size = 60;
+            Size = 80;
         }
         public void Move()
         {
@@ -51,6 +51,15 @@ namespace BallGamesWinFormsApp
         {
             X += Vx;
             Y += Vy;
+        }
+
+        public bool Contains(int pointX, int pointY)
+        {
+            var radius = Size / 2;
+            var centerX = X + radius;
+            var centerY = Y + radius;
+
+            return (centerX - pointX) * (centerX - pointX) + (centerY - pointY) * (centerY - pointY) <= radius * radius;
         }
     }
 }

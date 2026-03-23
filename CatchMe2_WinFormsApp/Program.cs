@@ -1,4 +1,4 @@
-namespace BallGames_WinFormsApp
+namespace CatchMe2_WinFormsApp
 {
     internal static class Program
     {
