@@ -28,33 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            leftLabel = new Label();
+            topLabel = new Label();
+            rightLabel = new Label();
+            downLabel = new Label();
             SuspendLayout();
             // 
-            // button1
+            // leftLabel
             // 
-            button1.Location = new Point(423, 47);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            leftLabel.AutoSize = true;
+            leftLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            leftLabel.Location = new Point(16, 185);
+            leftLabel.Name = "leftLabel";
+            leftLabel.Size = new Size(15, 17);
+            leftLabel.TabIndex = 0;
+            leftLabel.Text = "0";
+            // 
+            // topLabel
+            // 
+            topLabel.AutoSize = true;
+            topLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            topLabel.Location = new Point(394, 9);
+            topLabel.Name = "topLabel";
+            topLabel.Size = new Size(15, 17);
+            topLabel.TabIndex = 1;
+            topLabel.Text = "0";
+            // 
+            // rightLabel
+            // 
+            rightLabel.AutoSize = true;
+            rightLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rightLabel.Location = new Point(773, 185);
+            rightLabel.Name = "rightLabel";
+            rightLabel.Size = new Size(15, 17);
+            rightLabel.TabIndex = 2;
+            rightLabel.Text = "0";
+            // 
+            // downLabel
+            // 
+            downLabel.AutoSize = true;
+            downLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            downLabel.Location = new Point(394, 424);
+            downLabel.Name = "downLabel";
+            downLabel.Size = new Size(15, 17);
+            downLabel.TabIndex = 3;
+            downLabel.Text = "0";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(downLabel);
+            Controls.Add(rightLabel);
+            Controls.Add(topLabel);
+            Controls.Add(leftLabel);
             Name = "MainForm";
             Text = "Form1";
             Load += MainForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Label leftLabel;
+        private Label topLabel;
+        private Label rightLabel;
+        private Label downLabel;
     }
 }

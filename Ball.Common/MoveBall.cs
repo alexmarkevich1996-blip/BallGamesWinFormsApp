@@ -5,34 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using Timer = System.Windows.Forms.Timer;
 
-namespace Ball.Common
+namespace Core
 {
     public class MoveBall : RandomPointBall
     {
-        private Timer timer;
+
         public MoveBall(Form form) : base(form)
         {
-            timer = new Timer();
-            timer.Interval = 20;
-            timer.Tick += Timer_Tick;
-        }
-        public bool IsMovable()
-        {
-            return timer.Enabled;
-        }
-        private void Timer_Tick(object? sender, EventArgs e)
-        {
-            Move();
-        }
 
-        public void Start()
-        {
-            timer.Start();
+            Vx = GeneratRandomProjection();
+            Vy = GeneratRandomProjection();
         }
-
-        public void Stop()
+        private int GeneratRandomProjection()
         {
-            timer.Stop();
+            var randomDouble = Random.NextDouble();
+            var sign = 1;
+            if (randomDouble < 0.5)
+                sign = -1;
+            return Random.Next(2, 5) * sign;
         }
     }
 }

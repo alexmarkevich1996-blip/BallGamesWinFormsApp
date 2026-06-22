@@ -1,10 +1,10 @@
-using Ball.Common;
+using Core;
 
 namespace BallGamesWinFormsApp
 {
     public partial class MainForm : Form
     {
-        private List<RandomMoveBall> randomBalls { get; set; }
+        private List<Ball> balls { get; set; }
         public MainForm()
         {
 
@@ -18,11 +18,11 @@ namespace BallGamesWinFormsApp
             stopAllBallsButton.Enabled = true;
             createRandomBallButton.Enabled = false;
 
-            randomBalls = new List<RandomMoveBall>();
+            balls = new List<Ball>();
             for (int i = 0; i < 5; i++)
             {
-                var randomBall = new RandomMoveBall(this);
-                randomBalls.Add(randomBall);
+                var randomBall = new MoveBall(this);
+                balls.Add(randomBall);
                 randomBall.Show();
                 randomBall.Start();
             }
@@ -32,7 +32,7 @@ namespace BallGamesWinFormsApp
         {
             var countBalls = 0;
 
-            foreach (var randomBall in randomBalls)
+            foreach (var randomBall in balls)
             {
                 randomBall.Stop();
 
@@ -53,7 +53,7 @@ namespace BallGamesWinFormsApp
 
         private void CleanButton_Click(object sender, EventArgs e)
         {
-            foreach (var randomBall in randomBalls)
+            foreach (var randomBall in balls)
             {
                 randomBall.Clear();
             }

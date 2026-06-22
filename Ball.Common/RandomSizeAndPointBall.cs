@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ball.Common
+namespace Core
 {
     public class RandomSizeAndPointBall : RandomPointBall
     {
         public RandomSizeAndPointBall(Form form) : base(form)
         {
-            Size = Random.Next(30, 70);
+            Radius = Random.Next(10, 40);
         }
     }
 }
